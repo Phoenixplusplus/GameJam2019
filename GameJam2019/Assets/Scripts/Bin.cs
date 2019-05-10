@@ -19,6 +19,12 @@ public class Bin : MonoBehaviour
 
     [SerializeField]
     private ParticleSystem particleSystem;
+
+    [SerializeField]
+    private Transform pickupHeight;
+
+    [SerializeField]
+    private Transform targetDrop;
     
     private Material outlineMaterial;
     private float timePerAnimation;
@@ -33,9 +39,11 @@ public class Bin : MonoBehaviour
 
     public void PickupRubbish(Rubbish rubbish)
     {
-        Destroy(rubbish.gameObject);
+        rubbish.enabled = false; // disable the rubbish so that the last touching player registers as the rewarded player
+        rubbish.gameObject.GetComponent<Collider>().enabled = false;
 
         StartCoroutine(AnimateOutline());
+        StartCoroutine(AnimatePickup(rubbish.gameObject));
         // Trigger score
         Debug.Log("Bin just collected some rubbish!");
     }
@@ -59,11 +67,35 @@ public class Bin : MonoBehaviour
         particleSystem.Stop();
     }
 
-    private IEnumerator AnimatePickup()
+    private IEnumerator AnimatePickup(GameObject pickupObject)
     {
         float timeElapsed = 0.0f;
+        float pickupTime = 1.0f;
+        float dropTime = 0.5f;
 
-        yield return null;
+        Vector3 targetPosition = pickupObject.transform.position;
+        Vector3 startPosition = pickupObject.transform.position;
+        targetPosition.y = pickupHeight.position.y;
+
+        while(timeElapsed < pickupTime)
+        {
+            pickupObject.transform.position = Vector3.Lerp(startPosition, targetPosition, timeElapsed / pickupTime);
+
+            yield return null;
+            timeElapsed += Time.deltaTime;
+        }
+
+        pickupObject.transform.position = startPosition = targetPosition;
+        timeElapsed = 0.0f;
+
+        while(timeElapsed < dropTime)
+        {
+            pickupObject.transform.position = Vector3.Lerp(startPosition, targetDrop.position, timeElapsed / dropTime);
+
+            yield return null;
+            timeElapsed += Time.deltaTime;
+        }
+        Destroy(pickupObject);
     }
 
 }
