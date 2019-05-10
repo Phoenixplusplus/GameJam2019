@@ -7,10 +7,10 @@ public class BinTrigger : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        RubbishMovement rm = other.gameObject.GetComponent<RubbishMovement>();
-        if (rm != null)
+        Rubbish rubbish = other.gameObject.GetComponent<Rubbish>();
+        if (rubbish != null)
         {
-            bin.PickupRubbish(rm.gameObject);
+            bin.PickupRubbish(rubbish);
         }
     }
 }

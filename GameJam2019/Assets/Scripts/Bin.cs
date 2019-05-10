@@ -16,6 +16,9 @@ public class Bin : MonoBehaviour
 
     [SerializeField]
     private AnimationCurve animationCurve;
+
+    [SerializeField]
+    private ParticleSystem particleSystem;
     
     private Material outlineMaterial;
     private float timePerAnimation;
@@ -28,9 +31,10 @@ public class Bin : MonoBehaviour
     }
     #endregion
 
-    public void PickupRubbish(GameObject pickedUpObject)
+    public void PickupRubbish(Rubbish rubbish)
     {
-        Destroy(pickedUpObject);
+        Destroy(rubbish.gameObject);
+
         StartCoroutine(AnimateOutline());
         // Trigger score
         Debug.Log("Bin just collected some rubbish!");
@@ -42,6 +46,8 @@ public class Bin : MonoBehaviour
         float curveSample = 0.0f;
         Color initialColor = outlineMaterial.color;
 
+        particleSystem.Play();
+
         while (timeElapsed < colorAnimationTime)
         {
             curveSample = animationCurve.Evaluate(timeElapsed / timePerAnimation);
@@ -50,6 +56,7 @@ public class Bin : MonoBehaviour
             yield return null;
             timeElapsed += Time.deltaTime;
         }
+        particleSystem.Stop();
     }
 
     private IEnumerator AnimatePickup()
