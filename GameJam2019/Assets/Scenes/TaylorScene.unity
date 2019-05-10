@@ -10049,6 +10049,42 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d134393219fa654389e47b2ab722c28, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  circularOutlineMeshRenderer: {fileID: 1550203021}
+  collectionOutlineColor: {r: 0.44313726, g: 1, b: 0.18431373, a: 1}
+  colorAnimationTime: 0.4
+  animationCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 1.7280705
+      outSlope: 1.7280705
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.12544803
+    - serializedVersion: 3
+      time: 0.2
+      value: 1
+      inSlope: -1.1268828
+      outSlope: -1.1268828
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.06810033
+      outWeight: 0.14807759
+    - serializedVersion: 3
+      time: 0.9803014
+      value: 0.010487586
+      inSlope: 0.045339778
+      outSlope: 0.045339778
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.16604953
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &1833208681
 GameObject:
   m_ObjectHideFlags: 0
