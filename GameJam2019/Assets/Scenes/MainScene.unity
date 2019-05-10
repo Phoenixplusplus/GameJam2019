@@ -253,6 +253,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3685927062232789108, guid: 64ecc4ae54b012f4d93deaef39b66ce1,
+        type: 3}
+      propertyPath: FM
+      value: 
+      objectReference: {fileID: 515912515}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 64ecc4ae54b012f4d93deaef39b66ce1, type: 3}
 --- !u!1 &469359874
@@ -355,6 +360,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 515912514}
+  - component: {fileID: 515912515}
   m_Layer: 0
   m_Name: FlashManager
   m_TagString: Untagged
@@ -375,6 +381,88 @@ Transform:
   m_Children: []
   m_Father: {fileID: 879842792}
   m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &515912515
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 515912513}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b124464745a60545a857fe28b6141ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefabFlash: {fileID: 5729421321808775197, guid: 525f7cec483a4e24f9577c72cdf4e6d1,
+    type: 3}
+  freeGUI: {fileID: 1347377799962715412, guid: b2079fae465656e4e90c40eff1a57203, type: 3}
+--- !u!1 &724435606
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 724435608}
+  - component: {fileID: 724435607}
+  m_Layer: 0
+  m_Name: FlashTester
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &724435607
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 724435606}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65e3ba4799291ed43b9f4ae72b9b4711, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  FM: {fileID: 515912515}
+  TEST_ME: 0
+  CurrentMouse: {x: 0, y: 0}
+  SingleLerp: 0
+  UseXLerpOnly: 0
+  StartPos: {x: 0.1, y: 0.1}
+  MiddlePos: {x: 0.5, y: 0.5}
+  FinishPos: {x: 0.9, y: 0.9}
+  StartWidth: 0.2
+  MiddleWidth: 0.5
+  FinishWidth: 0.2
+  StartAlpha: 1
+  MiddleAlpha: 1
+  FinishAlpha: 1
+  myMessage1: Hello
+  myMessage2: And Message 2
+  TextColor1: {r: 0, g: 0, b: 0, a: 0}
+  TextColor2: {r: 1, g: 0.08789868, b: 0, a: 0}
+  Xtween1: 1
+  Xtween2: 0
+  Ytween1: 0
+  Ytween2: 0
+  AnimTime: 5
+  MiddleTimeRatio: 0.5
+--- !u!4 &724435608
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 724435606}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &817853141
 GameObject:
