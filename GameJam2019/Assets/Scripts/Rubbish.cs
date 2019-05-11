@@ -6,12 +6,12 @@ public class Rubbish : MonoBehaviour
 {
     public Player LastTouchedPlayer { get; private set; }
     public int PlayerID;
-    private GC gc;
+    public GC gc;
 
-    private void Awake()
-    {
-        gc = GC.Instance;
-    }
+    //private void Awake()
+    //{
+    //    gc = GC.Instance;
+    //}
 
     private void OnCollisionEnter(Collision collision)
     {

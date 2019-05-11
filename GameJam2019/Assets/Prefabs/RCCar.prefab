@@ -5921,6 +5921,7 @@ GameObject:
   - component: {fileID: 3484921270800374955}
   - component: {fileID: 6047311660694828706}
   - component: {fileID: 8774651511655279437}
+  - component: {fileID: 4708642132098454004}
   m_Layer: 0
   m_Name: RCCar
   m_TagString: Player
@@ -6072,6 +6073,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a46509984fe49142b6155a50741a8d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  RB: {fileID: 0}
 --- !u!82 &8774651511655279437
 AudioSource:
   m_ObjectHideFlags: 0
@@ -6168,6 +6170,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &4708642132098454004
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3701248329510150369}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f8bb966a0eaa7d46afd8d1215cbeef7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PlayerID: 1
 --- !u!1 &3701248329510150371
 GameObject:
   m_ObjectHideFlags: 0
@@ -7643,6 +7658,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3701248329509928083}
     m_Modifications:
+    - target: {fileID: -927199367670048503, guid: 1541b1869af0b8e45b80250f1da12a1d,
+        type: 3}
+      propertyPath: m_Name
+      value: RCCar
+      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 1541b1869af0b8e45b80250f1da12a1d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -7712,11 +7732,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: -927199367670048503, guid: 1541b1869af0b8e45b80250f1da12a1d,
-        type: 3}
-      propertyPath: m_Name
-      value: RCCar
       objectReference: {fileID: 0}
     - target: {fileID: -1504981713932161579, guid: 1541b1869af0b8e45b80250f1da12a1d,
         type: 3}

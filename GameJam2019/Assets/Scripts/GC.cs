@@ -99,14 +99,14 @@ public class GC : MonoBehaviour
         if (player == 1)
         {
             Score1++;
-            if (Random.Range(0, 1) < 0.5) FM.CustomFlash(p11, Random.Range(0, gratz.Length));
-            else { FM.CustomFlash(p12, Random.Range(0, gratz.Length)); }
+            if (Random.Range(0, 1) < 0.5) FM.CustomFlash(p11, "Great");
+            else { FM.CustomFlash(p12, "Super"); }
         }
         if (player == 2)
         {
             Score2++;
-            if (Random.Range(0, 1) < 0.5) FM.CustomFlash(p21, Random.Range(0, gratz.Length));
-            else { FM.CustomFlash(p22, Random.Range(0, gratz.Length)); }
+            if (Random.Range(0, 1) < 0.5) FM.CustomFlash(p21, "Magic");
+            else { FM.CustomFlash(p22, "Class"); }
         }
     }
 
