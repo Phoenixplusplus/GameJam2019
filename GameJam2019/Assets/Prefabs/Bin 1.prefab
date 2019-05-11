@@ -455,6 +455,7 @@ MonoBehaviour:
   particleSystem: {fileID: 2161908958804660971}
   pickupHeight: {fileID: 1562345065}
   targetDrop: {fileID: 275947115}
+  scoreAudio: {fileID: 8300000, guid: 6540543df49c38a4d916a6316b60aaac, type: 3}
 --- !u!82 &-913125891899966454
 AudioSource:
   m_ObjectHideFlags: 0

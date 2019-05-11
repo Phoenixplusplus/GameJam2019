@@ -29,14 +29,11 @@ public class Bin : MonoBehaviour
     private Material outlineMaterial;
     private float timePerAnimation;
 
-    private AudioSource audioSource;
-
     #region Unity API
     private void Awake()
     {
         outlineMaterial = circularOutlineMeshRenderer.material;
         timePerAnimation = colorAnimationTime * 0.5f;
-        audioSource = GetComponent<AudioSource>();
     }
     #endregion
 
@@ -45,8 +42,6 @@ public class Bin : MonoBehaviour
         rubbish.scoreMe();
         rubbish.enabled = false; // disable the rubbish so that the last touching player registers as the rewarded player
         rubbish.gameObject.GetComponent<Collider>().enabled = false;
-
-        audioSource.Play();
 
         StartCoroutine(AnimateOutline());
         StartCoroutine(AnimatePickup(rubbish.gameObject));
