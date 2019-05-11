@@ -9,6 +9,7 @@ public class SpeedPickup : AbstractPickup
         // increase the car speed
         Debug.Log("Increase the car speed");
         carController.SpeedPowerOn(20f, 35f);
+        
     }
 
     public override void Deactivate(CarController carController)

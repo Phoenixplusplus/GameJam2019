@@ -10,9 +10,12 @@ public class PickupEffectsController : MonoBehaviour
 
     private Dictionary<Type, PickupReference> pickupsWithType;
 
+    private AudioSource audioSource;
+
     private void Awake()
     {
         pickupsWithType = new Dictionary<Type, PickupReference>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     private void Update()
@@ -38,6 +41,8 @@ public class PickupEffectsController : MonoBehaviour
     {
         Type effectType = pickupReference.Effect.GetType();
         PickupReference previousReference;
+
+        audioSource.Play();
 
         if (pickupsWithType.TryGetValue(effectType, out previousReference))
         {
