@@ -38,7 +38,7 @@ public class Step_Control : MonoBehaviour
         {
             thing.MoveBy(MyDisp * ForceMultiplier);
         }
-        //Debug.Log("Still Here");
+        Debug.Log("Still Here");
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -49,7 +49,7 @@ public class Step_Control : MonoBehaviour
         {
             thing.MoveBy(MyDisp * ForceMultiplier);
         }
-        //Debug.Log("Boing");
+        Debug.Log("Boing");
     }
 
 

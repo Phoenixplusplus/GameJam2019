@@ -39,6 +39,7 @@ public class Bin : MonoBehaviour
 
     public void PickupRubbish(Rubbish rubbish)
     {
+        rubbish.scoreMe();
         rubbish.enabled = false; // disable the rubbish so that the last touching player registers as the rewarded player
         rubbish.gameObject.GetComponent<Collider>().enabled = false;
 

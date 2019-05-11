@@ -23,10 +23,17 @@ public class FlashProManager : MonoBehaviour
     #endregion
 
     #region Unity API
-    void Start()
+
+    private void Awake()
     {
         // stash reference for efficiency
         myGUIitems = new List<GameObject>();
+    }
+
+
+    void Start()
+    {
+
     }
     #endregion
 
