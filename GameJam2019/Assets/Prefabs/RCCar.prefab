@@ -5999,7 +5999,7 @@ MonoBehaviour:
   m_SteerHelper: 0.644
   m_TractionControl: 100
   m_FullTorqueOverAllWheels: 2500
-  m_ReverseTorque: 500
+  m_ReverseTorque: 200
   m_MaxHandbrakeTorque: 100000000
   m_Downforce: 100
   m_SpeedType: 0
@@ -7533,6 +7533,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3701248329509928083}
     m_Modifications:
+    - target: {fileID: -927199367670048503, guid: 1541b1869af0b8e45b80250f1da12a1d,
+        type: 3}
+      propertyPath: m_Name
+      value: RCCar
+      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 1541b1869af0b8e45b80250f1da12a1d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -7602,11 +7607,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: -927199367670048503, guid: 1541b1869af0b8e45b80250f1da12a1d,
-        type: 3}
-      propertyPath: m_Name
-      value: RCCar
       objectReference: {fileID: 0}
     - target: {fileID: -1504981713932161579, guid: 1541b1869af0b8e45b80250f1da12a1d,
         type: 3}
