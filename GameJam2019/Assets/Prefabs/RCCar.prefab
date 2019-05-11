@@ -5991,6 +5991,9 @@ MonoBehaviour:
   - {fileID: 3701248329499907449}
   - {fileID: 3701248329499907451}
   - {fileID: 3701248329499907429}
+  m_PloughBounds:
+  - {fileID: 1635764687780277611}
+  - {fileID: 4886224200573665399}
   m_CentreOfMassOffset: {x: 0, y: 0, z: 0}
   m_MaximumSteerAngle: 25
   m_SteerHelper: 0.644
@@ -6000,11 +6003,11 @@ MonoBehaviour:
   m_MaxHandbrakeTorque: 100000000
   m_Downforce: 100
   m_SpeedType: 0
-  m_Topspeed: 150
+  m_Topspeed: 30
   m_RevRangeBoundary: 1
   m_SlipLimit: 0.3
   m_BrakeTorque: 20000
-  m_SpeedPower: 4
+  m_SpeedPower: 35
 --- !u!114 &3701248329499907453
 MonoBehaviour:
   m_ObjectHideFlags: 0

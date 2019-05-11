@@ -372,14 +372,26 @@ namespace UnityStandardAssets.Vehicles.Car
         public void SteerPowerOff() { m_MaximumSteerAngle = 25; }
 
         // 2 is good increasedSpeed (value is divided)
-        public void SpeedPowerOn(float increasedSpeed) { m_SpeedPower = increasedSpeed; }
-        public void SpeedPowerOff() { m_SpeedPower = 4f; }
+        public void SpeedPowerOn(float increasedSpeed, float increasedTopSpeed)
+        {
+            m_SpeedPower = increasedSpeed;
+            m_Topspeed = increasedTopSpeed;
+        }
+        public void SpeedPowerOff()
+        {
+            m_SpeedPower = 35f;
+            m_Topspeed = 30f;
+        }
 
         // 5(x) is good enough scale
-        public void PloughPowerOn(Vector3 increasedScale) { m_PloughBounds[0].transform.localScale = increasedScale; m_PloughBounds[1].transform.localScale = increasedScale; }
+        public void PloughPowerOn(Vector3 increasedScale)
+        {
+            m_PloughBounds[0].transform.localScale = increasedScale;
+            m_PloughBounds[1].transform.localScale = increasedScale;
+        }
         public void PloughPowerOff()
         {
-            Vector3 initialScale = new Vector3(2f, 0f, 0f);
+            Vector3 initialScale = new Vector3(2f, 1f, 1f);
             m_PloughBounds[0].transform.localScale = initialScale;
             m_PloughBounds[1].transform.localScale = initialScale;
         }
