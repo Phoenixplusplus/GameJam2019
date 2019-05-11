@@ -18,6 +18,14 @@ public class GC : MonoBehaviour
     private TextMeshProUGUI P1Score;
     private TextMeshProUGUI P2Score;
 
+    private string[] gratz = new string[] { "Brill", "Magic", "Super", "Great", "Gratz" };
+
+    private FlashProTemplate p11;
+    private FlashProTemplate p12;
+    private FlashProTemplate p21;
+    private FlashProTemplate p22;
+
+
     #endregion
 
     #region Set Singelton
@@ -59,6 +67,7 @@ public class GC : MonoBehaviour
     void Start()
     {
         SetUpGUI();
+        SetFlashes();
     }
 
     // Update is called once per frame
@@ -87,8 +96,45 @@ public class GC : MonoBehaviour
 
     public void score (int player)
     {
-        if (player == 1) Score1++;
-        if (player == 2) Score2++;
+        if (player == 1)
+        {
+            Score1++;
+            if (Random.Range(0, 1) < 0.5) FM.CustomFlash(p11, Random.Range(0, gratz.Length));
+            else { FM.CustomFlash(p12, Random.Range(0, gratz.Length)); }
+        }
+        if (player == 2)
+        {
+            Score2++;
+            if (Random.Range(0, 1) < 0.5) FM.CustomFlash(p21, Random.Range(0, gratz.Length));
+            else { FM.CustomFlash(p22, Random.Range(0, gratz.Length)); }
+        }
     }
+
+    void SetFlashes()
+    {
+        p11 = new FlashProTemplate();
+        p11.StartPos = new Vector2(0.3f, 0.8f);
+        p11.FinishPos = new Vector2(0.1f, 0.8f);
+        p11.StartWidth = 0.1f;
+        p11.FinishWidth = 0.19f;
+        p11.TextColor1 = Color.green;
+        p11.AnimTime = 1.5f;
+
+        p12 = p11.Copy();
+        p12.StartPos = new Vector2(0.7f, 0.8f);
+        p12.FinishPos = new Vector2(0.9f, 0.8f);
+
+        p21 = p12.Copy();
+        p21.StartPos = new Vector2(0.7f, 0.2f);
+        p21.FinishPos = new Vector2(0.9f, 0.2f);
+
+        p22 = p21.Copy();
+        p22.StartPos = new Vector2(0.3f, 0.2f);
+        p22.FinishPos = new Vector2(0.1f, 0.2f);
+
+    }
+
+
+
 
 }
