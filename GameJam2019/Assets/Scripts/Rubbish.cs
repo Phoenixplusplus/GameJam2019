@@ -5,6 +5,13 @@ using UnityEngine;
 public class Rubbish : MonoBehaviour
 {
     public Player LastTouchedPlayer { get; private set; }
+    public int PlayerID;
+    private GC gc;
+
+    private void Awake()
+    {
+        gc = GC.Instance;
+    }
 
     private void OnCollisionEnter(Collision collision)
     {
@@ -12,6 +19,13 @@ public class Rubbish : MonoBehaviour
         if(player != null)
         {
             LastTouchedPlayer = player;
+            PlayerID = player.PlayerID;
         }
     }
+
+    public void scoreMe()
+    {
+        gc.score(PlayerID);
+    }
+
 }
