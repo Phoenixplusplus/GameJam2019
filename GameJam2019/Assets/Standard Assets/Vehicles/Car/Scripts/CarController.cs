@@ -22,6 +22,7 @@ namespace UnityStandardAssets.Vehicles.Car
         [SerializeField] private WheelCollider[] m_WheelColliders = new WheelCollider[4];
         [SerializeField] private GameObject[] m_WheelMeshes = new GameObject[4];
         [SerializeField] private WheelEffects[] m_WheelEffects = new WheelEffects[4];
+        [SerializeField] private GameObject[] m_PloughBounds = new GameObject[2];
         [SerializeField] private Vector3 m_CentreOfMassOffset;
         [SerializeField] private float m_MaximumSteerAngle;
         [Range(0, 1)] [SerializeField] private float m_SteerHelper; // 0 is raw physics , 1 the car will grip in the direction it is facing
@@ -36,6 +37,7 @@ namespace UnityStandardAssets.Vehicles.Car
         [SerializeField] private float m_RevRangeBoundary = 1f;
         [SerializeField] private float m_SlipLimit;
         [SerializeField] private float m_BrakeTorque;
+        [SerializeField] private float m_SpeedPower = 4f;
 
         private Quaternion[] m_WheelMeshLocalRotations;
         private Vector3 m_Prevpos, m_Pos;
@@ -200,7 +202,7 @@ namespace UnityStandardAssets.Vehicles.Car
             switch (m_CarDriveType)
             {
                 case CarDriveType.FourWheelDrive:
-                    thrustTorque = accel * (m_CurrentTorque / 4f);
+                    thrustTorque = accel * (m_CurrentTorque / m_SpeedPower);
                     for (int i = 0; i < 4; i++)
                     {
                         m_WheelColliders[i].motorTorque = thrustTorque;
@@ -362,6 +364,24 @@ namespace UnityStandardAssets.Vehicles.Car
                 }
             }
             return false;
+        }
+
+        // Powerup calls
+        // 50 is good increasedTurnAngle
+        public void SteerPowerOn(float increasedTurnAngle) { m_MaximumSteerAngle = increasedTurnAngle; }
+        public void SteerPowerOff() { m_MaximumSteerAngle = 25; }
+
+        // 2 is good increasedSpeed (value is divided)
+        public void SpeedPowerOn(float increasedSpeed) { m_SpeedPower = increasedSpeed; }
+        public void SpeedPowerOff() { m_SpeedPower = 4f; }
+
+        // 5(x) is good enough scale
+        public void PloughPowerOn(Vector3 increasedScale) { m_PloughBounds[0].transform.localScale = increasedScale; m_PloughBounds[1].transform.localScale = increasedScale; }
+        public void PloughPowerOff()
+        {
+            Vector3 initialScale = new Vector3(2f, 0f, 0f);
+            m_PloughBounds[0].transform.localScale = initialScale;
+            m_PloughBounds[1].transform.localScale = initialScale;
         }
     }
 }
