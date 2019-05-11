@@ -832,6 +832,7 @@ GameObject:
   - component: {fileID: 341300514}
   - component: {fileID: 341300513}
   - component: {fileID: 341300512}
+  - component: {fileID: 341300516}
   m_Layer: 0
   m_Name: Player 1 Car
   m_TagString: Player
@@ -907,6 +908,9 @@ MonoBehaviour:
   - {fileID: 1568360490}
   - {fileID: 142022618}
   - {fileID: 1129486034}
+  m_PloughBounds:
+  - {fileID: 0}
+  - {fileID: 0}
   m_CentreOfMassOffset: {x: 0, y: 0, z: 0}
   m_MaximumSteerAngle: 25
   m_SteerHelper: 0.644
@@ -920,6 +924,7 @@ MonoBehaviour:
   m_RevRangeBoundary: 1
   m_SlipLimit: 0.3
   m_BrakeTorque: 20000
+  m_SpeedPower: 4
 --- !u!54 &341300515
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -937,6 +942,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &341300516
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 341300511}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a46509984fe49142b6155a50741a8d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &351402408
 GameObject:
   m_ObjectHideFlags: 0
@@ -15199,6 +15216,9 @@ MonoBehaviour:
   - {fileID: 1438417678}
   - {fileID: 1881855821}
   - {fileID: 1304513770}
+  m_PloughBounds:
+  - {fileID: 0}
+  - {fileID: 0}
   m_CentreOfMassOffset: {x: 0, y: 0, z: 0}
   m_MaximumSteerAngle: 25
   m_SteerHelper: 0.644
@@ -15212,6 +15232,7 @@ MonoBehaviour:
   m_RevRangeBoundary: 1
   m_SlipLimit: 0.3
   m_BrakeTorque: 20000
+  m_SpeedPower: 4
 --- !u!54 &1837090384
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -16681,6 +16702,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8560802995957642076, guid: 2f05054250ecb3a4792cb33fd3804ce3,
+        type: 3}
+      propertyPath: speed
+      value: -1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2f05054250ecb3a4792cb33fd3804ce3, type: 3}
