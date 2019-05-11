@@ -8,7 +8,7 @@ public class BoundsPickup : AbstractPickup
     {
         // increase the plough bounds
         Debug.Log("Increase the car plough bounds");
-        carController.PloughPowerOn(new Vector3(5f, 0f, 0f));
+        carController.PloughPowerOn(new Vector3(5f, 1f, 1f));
     }
 
     public override void Deactivate(CarController carController)
